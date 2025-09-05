@@ -1,8 +1,8 @@
 site_name: Win11 Lab
 site_description: Windows 11 Lab notes, guides, and cheatsheets
-site_url: https://<YOUR-USER>.github.io/<YOUR-REPO>  # update with your repo name
+site_url: https://sammy-john.github.io/windows11-powershell-lab
 
-repo_url: https://github.com/Sammy-John/windows11-powershell-lab<YOUR-USER>/<YOUR-REPO>
+repo_url: https://github.com/Sammy-John/windows11-powershell-lab
 edit_uri: edit/main/docs/
 
 theme:
