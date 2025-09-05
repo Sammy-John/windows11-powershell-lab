@@ -9,7 +9,7 @@ theme:
   name: material
   logo: images/studio-teknabu-logo.webp
   favicon: images/studio-teknabu-logo.webp
-  alette:
+  palette:
     - scheme: default
       toggle:
         icon: material/weather-night
