@@ -81,3 +81,32 @@
   --md-primary-fg-color: var(--color-accent-deep);
   --md-accent-fg-color: var(--color-accent-secondary-desaturated);
 }
+
+/* --- Sidebar logo sizing & spacing --- */
+.md-nav__title .md-logo img {
+  height: 28px;            /* adjust: 24–36px works well */
+  width: auto;
+  object-fit: contain;
+}
+
+/* Optional: a little breathing room around the logo/title */
+.md-nav__title {
+  padding-top: 0.4rem;
+  padding-bottom: 0.6rem;
+}
+
+/* --- Subtle brand tint in the sidebar --- */
+.md-sidebar {
+  background-color: var(--color-bg-alt-1);
+}
+
+/* Active/hover link color uses your accent */
+.md-nav__link--active,
+.md-nav__item .md-nav__link:hover {
+  color: var(--color-accent-deep);
+}
+
+/* Keep contrast for regular links */
+.md-nav__item .md-nav__link {
+  color: var(--color-text);
+}
