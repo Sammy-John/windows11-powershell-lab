@@ -1,0 +1,19 @@
+site_name: Win11 Lab
+site_description: Windows 11 Lab notes, guides, and cheatsheets
+site_url: https://<YOUR-USER>.github.io/<YOUR-REPO>  # update with your repo name
+
+repo_url: https://github.com/Sammy-John/windows11-powershell-lab<YOUR-USER>/<YOUR-REPO>
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  features:
+    - navigation.instant
+    - navigation.top
+    - toc.integrate
+    - content.code.copy
+
+nav:
+  - Home: index.md
+
+docs_dir: docs
