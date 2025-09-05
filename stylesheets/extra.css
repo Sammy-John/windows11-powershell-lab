@@ -1,25 +1,83 @@
+/* === Base Root Styles (Default) + Variants === */
+:root {
+  --font-header: 'Outfit', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  /* Alternative fonts for specific uses */
+  --font-accent: 'Space Grotesk', sans-serif;
+  --font-alt-body: 'IBM Plex Sans', sans-serif;
+
+  /* Primary background */
+  --color-bg: #E9F5FF; /* Alice Blue */
+
+  /* Alternative background options */
+  --color-bg-alt-1: #F5F7FA; /* Soft Warm Grey */
+  --color-bg-alt-2: #F2F4F2; /* Misty Neutral */
+  --color-bg-alt-3: #F8FAFC; /* Snowy White */
+
+  --color-bg-dark: #092F64; /* Cool Black */
+  --color-surface-dark: #1F1F1F; /* Eerie Black */
+
+  --color-text: #1A1A1A;
+  --color-text-light: #f4f4f6;
+
+  --color-accent: #5A4DFF; /* Electric Violet */
+
+  /* Accent variants */
+  --color-accent-glow: rgba(90, 77, 255, 0.4);
+  --color-accent-glow-soft: rgba(109, 74, 255, 0.3);
+
+  --color-accent-secondary: #468BE5; /* Tufts Blue */
+  --color-accent-secondary-desaturated: #6DA9E3; /* Desaturated Blue */
+
+  --color-accent-soft: #93BFEF; /* Jordy Blue */
+  --color-accent-soft-muted: #B2D4F0; /* Pale Sky */
+
+  --color-accent-deep: #1A5799; /* Cobalt Blue */
+  --color-accent-deep-alt: #274472; /* Soft Navy */
+
+  --max-content-width: 1440px;
+
+  /* Base Typography Settings */
+  --font-size-sm: 0.875rem;   /* 14px – captions, labels, nav items */
+  --font-size-md: 1rem;       /* 16px – body text, UI base */
+  --font-size-lg: 1.25rem;    /* 20px – section lead, card titles */
+  --font-size-xl: 1.5rem;     /* 24px – h4/h3 in body flow */
+  --font-size-2xl: 2rem;      /* 32px – hero subheadings, h2 */
+  --font-size-3xl: 3rem;      /* 48px – hero headings, h1 */
+
+  --line-height-base: 1.6;
+  --line-height-heading: 1.25;
+  --line-height-tight: 1.15;
+
+  --letter-spacing-tight: -0.02em;
+  --letter-spacing-normal: 0em;
+  --letter-spacing-wide: 0.05em;
+}
+
 /* === Map StudioTeknabu variables into MkDocs Material theme === */
 :root {
-  /* Primary brand color → header, links, highlights */
+  /* Brand colors */
   --md-primary-fg-color: var(--color-accent);
   --md-primary-fg-color--light: var(--color-accent-soft);
   --md-primary-fg-color--dark: var(--color-accent-deep);
 
-  /* Accent color → buttons, focus, secondary emphasis */
   --md-accent-fg-color: var(--color-accent-secondary);
 
   /* Backgrounds */
   --md-default-bg-color: var(--color-bg);
   --md-default-fg-color: var(--color-text);
 
-  /* Dark mode backgrounds/text */
-  [data-md-color-scheme="slate"] {
-    --md-default-bg-color: var(--color-bg-dark);
-    --md-default-fg-color: var(--color-text-light);
-  }
-
   /* Fonts */
   --md-text-font-family: var(--font-body);
-  --md-code-font-family: var(--font-accent);
   --md-headings-font-family: var(--font-header);
+  --md-code-font-family: var(--font-accent);
+}
+
+/* Dark mode overrides */
+[data-md-color-scheme="slate"] {
+  --md-default-bg-color: var(--color-bg-dark);
+  --md-default-fg-color: var(--color-text-light);
+  --md-primary-fg-color: var(--color-accent-deep);
+  --md-accent-fg-color: var(--color-accent-secondary-desaturated);
 }
