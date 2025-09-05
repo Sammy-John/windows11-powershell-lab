@@ -9,16 +9,15 @@ theme:
   name: material
   logo: images/studio-teknabu-logo.webp
   favicon: images/studio-teknabu-logo.webp
-  palette:
-    - scheme: default     # light mode
-      primary: indigo     # ← change to your brand's closest match
-      accent: amber       # ← change to your brand's closest match
-    - scheme: slate       # dark mode
-      primary: indigo
-      accent: amber
+  alette:
+    - scheme: default
       toggle:
         icon: material/weather-night
         name: Switch to dark mode
+    - scheme: slate
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
   features:
     - navigation.instant
     - navigation.top
@@ -29,3 +28,7 @@ nav:
   - Home: index.md
 
 docs_dir: docs
+
+extra_css:
+  - stylesheets/extra.css
+
