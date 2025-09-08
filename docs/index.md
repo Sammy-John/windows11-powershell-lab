@@ -9,7 +9,7 @@ hide:
 > Practical, reproducible steps for a secure personal lab.
 
 !!! tip "New here?"
-    Start with the **[Quickstart (Fresh VM)](getting-started/quickstart.md)** and then follow the **[Lab Roadmap](getting-started/roadmap.md)**.
+    Start with the **Quickstart (Fresh VM)** and then follow the **Lab Roadmap**.
 
 ## What’s inside
 
@@ -22,4 +22,4 @@ hide:
 
 ## Quick Links
 
-- [:material-github: Repo]({{ config.repo_url }}) · [:material-file-edit: Edit this page]({{ page.edit_uri }})
+- [:material-github: Repo](https://github.com/Sammy-John/windows11-powershell-lab)

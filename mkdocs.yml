@@ -49,7 +49,10 @@ plugins:
       minify_html: true
   - git-revision-date-localized:
       enable_creation_date: true
+      exclude:
+        - changelog.md
   - glightbox
+
 
 markdown_extensions:
   - admonition

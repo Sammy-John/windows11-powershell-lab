@@ -6,15 +6,22 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write  # needed for deploying to gh-pages
+  contents: write
 
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Ensure unshallow history (safety)
+        run: |
+          git fetch --prune --unshallow || true
+          git rev-parse --short HEAD
+          git log -1 --oneline
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -39,6 +46,17 @@ jobs:
           else
             echo "::warning::Root changelog.md not found; skipping copy"
           fi
+
+      # 🔎 DEBUG: confirm the files the runner is actually building
+      - name: Debug: show mkdocs.yml
+        run: |
+          echo "----- mkdocs.yml -----"
+          nl -ba mkdocs.yml
+
+      - name: Debug: show index.md
+        run: |
+          echo "----- docs/index.md -----"
+          nl -ba docs/index.md || (echo "docs/index.md missing"; exit 1)
 
       - name: Build MkDocs (strict)
         run: mkdocs build --strict
