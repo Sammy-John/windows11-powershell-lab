@@ -21,7 +21,6 @@ jobs:
       - name: Ensure full history & show shallow status
         shell: bash
         run: |
-          # Make absolutely sure this isn't shallow
           git fetch --prune --unshallow || true
           echo "is-shallow? -> $(git rev-parse --is-shallow-repository || echo unknown)"
           echo "HEAD -> $(git rev-parse --short HEAD)"
@@ -52,19 +51,19 @@ jobs:
             echo "::warning::Root changelog.md not found; skipping copy"
           fi
 
-      # 🔎 DEBUG: show the exact files the runner will build
-      - name: Debug: show mkdocs.yml
+      # (Optional) Debug: print what we're about to build
+      - name: "Debug: show mkdocs.yml"
         run: |
           echo "----- mkdocs.yml -----"
           nl -ba mkdocs.yml
 
-      - name: Debug: show docs/index.md
+      - name: "Debug: show docs/index.md"
         run: |
           echo "----- docs/index.md -----"
           nl -ba docs/index.md || (echo "docs/index.md missing"; exit 1)
 
       - name: Build MkDocs (strict)
-        run: mkdocs build --strict
+        run: mkdocs build --strict --clean
 
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v3
@@ -73,4 +72,3 @@ jobs:
           publish_branch: gh-pages
           publish_dir: ./site
           force_orphan: true
-
