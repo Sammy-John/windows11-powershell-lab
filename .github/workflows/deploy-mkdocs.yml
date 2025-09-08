@@ -4,7 +4,7 @@ on:
   push:
     branches: [ main ]
     paths-ignore:
-      - 'docs/**'    # avoid loop when we commit built files
+      - 'docs/**'    # prevent loops when committing built files
   workflow_dispatch:
 
 permissions:

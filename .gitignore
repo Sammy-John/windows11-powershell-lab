@@ -8,3 +8,6 @@ Thumbs.db
 
 # Local Changelog Script
 serve.ps1
+
+# Ignore old folder if reappears
+/site/

@@ -6,8 +6,9 @@ repo_name: Sammy-John/windows11-powershell-lab
 edit_uri: edit/main/src/
 
 # 👇 important: source and output
-docs_dir: src
-site_dir: docs
+docs_dir: src     # your markdown source
+site_dir: docs    # build output (what Pages serves)
+
 
 theme:
   name: material
