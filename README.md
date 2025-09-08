@@ -27,9 +27,7 @@ The project exists to:
 ## 📚 How to Use
 
 This repository is best used as a **knowledge reference**:
-- Browse the [docs/](./docs) folder directly.  
-- Or view the published **MkDocs site** (coming soon).  
-- Follow the roadmap for a structured learning journey, or dip into topics as needed.  
+
 
 ---
 

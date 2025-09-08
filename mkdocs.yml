@@ -1,0 +1,68 @@
+# mkdocs.yml — minimal, branded-ready, Material
+
+site_name: "Windows11 + Powershell Lab"           # ← update
+site_description: "This repository is a **reference hub** for building, securing, and managing a Windows environment.  
+It combines **practical setup notes, security principles, and PowerShell learning resources** into one organized space, published as a live site using MkDocs."     # ← update
+
+theme:
+  name: material
+  custom_dir: overrides               # put template overrides in ./overrides/
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - search.highlight
+    - search.suggest
+    - content.code.copy
+  palette:
+    # Light scheme
+    - scheme: default
+      primary: indigo                 # ← replace with your brand color or use CSS vars in extra_css
+      accent: indigo
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    # Dark scheme
+    - scheme: slate
+      primary: indigo                 # ← replace
+      accent: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  logo: assets/logo.svg               # optional (place in docs/assets/)
+  favicon: assets/favicon.png         # optional (place in docs/assets/)
+
+nav:
+  - Home: index.md
+  - Changelog: changelog.md           # Option B: CI will copy root CHANGELOG.md → docs/changelog.md
+
+plugins:
+  - search
+  # Enable these later after we add them to CI deps:
+  # - awesome-pages
+  # - section-index
+  # - git-revision-date-localized:
+  #     fallback_to_build_date: true
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - footnotes
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+
+extra_css:
+  - assets/theme.css                  # define brand CSS vars / tweaks here (docs/assets/theme.css)
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: "https://github.com/Sammy-John/windows11-powershell-lab"   # optional; update or remove
+
+# Optional:
+# repo_url: https://github.com/your-account/your-repo
+# repo_name: your-repo
