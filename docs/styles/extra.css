@@ -1,0 +1,22 @@
+/* tighten content width a touch for readability */
+.md-grid { max-width: 1100px; }
+
+/* subtle hero tweaks */
+.hero .md-button--primary { font-weight: 600; }
+
+/* code blocks: slightly larger and comfortable line height */
+.md-typeset pre code { font-size: 0.9rem; line-height: 1.5; }
+
+/* callout cards (admonitions) */
+.md-typeset .admonition,
+.md-typeset details {
+  border-radius: 12px;
+}
+
+/* tables: full width and soft borders */
+.md-typeset table { width: 100%; }
+.md-typeset table:not([class]) th,
+.md-typeset table:not([class]) td { border-color: rgba(0,0,0,.08); }
+
+/* nav active item a little clearer */
+.md-nav__link--active { font-weight: 600; }

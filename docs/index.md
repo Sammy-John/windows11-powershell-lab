@@ -1,28 +1,25 @@
-# Windows 11 + PowerShell Lab
-
-A curated set of notes, guides, and cheatsheets as I learn Windows 11 and PowerShell in a virtual lab. Short, actionable pages with copy-paste examples.
-
+---
+title: Windows Lab Docs
+hide:
+  - toc
 ---
 
-## Start here
-- **Install guide:** Set up a clean Windows 11 lab → [Windows 11 Install](install-guides/windows11-install.md)
-- **PowerShell quick ref:** Common object/query patterns → [PowerShell Objects](cheatsheets/powershell-objects.md)
+# Windows + PowerShell Lab
 
----
+> Practical, reproducible steps for a secure personal lab.
+
+!!! tip "New here?"
+    Start with the **[Quickstart (Fresh VM)](getting-started/quickstart.md)** and then follow the **[Lab Roadmap](getting-started/roadmap.md)**.
 
 ## What’s inside
-- **Install Guides** – clean installs, snapshots, baselines  
-- **Cheatsheets** – quick lookups for commands and syntax  
-- **Snippets** – tiny, reusable code blocks (coming soon)
 
----
+- **Lab Setup** – Windows 11, baseline tools, snapshots.
+- **Administration & Security** – accounts, UAC, auditing, firewall.
+- **PowerShell Notes** – pipelines, functions, services, tasks, logs.
+- **Tools** – Git, Notepad++, Sysinternals, 7-Zip.
+- **Troubleshooting** – quick checks and fixes.
+- **Changelog** – what changed and when.
 
-## Why I’m doing this
-- Build a repeatable **Windows 11 lab** workflow  
-- Learn **PowerShell fundamentals** the practical way  
-- Create notes I can **share and reuse** quickly
+## Quick Links
 
----
-
-## Contributing / Feedback
-Spotted something off or have a better way? Open an issue or PR on the repo.
+- [:material-github: Repo]({{ config.repo_url }}) · [:material-file-edit: Edit this page]({{ page.edit_uri }})

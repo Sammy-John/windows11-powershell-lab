@@ -1,35 +1,75 @@
-site_name: Win11 Lab
-site_description: Windows 11 Lab notes, guides, and cheatsheets
-site_url: https://sammy-john.github.io/windows11-powershell-lab
-
-repo_url: https://github.com/Sammy-John/windows11-powershell-lab
+site_name: Windows11 + Powershell Lab
+site_description: Hands-on Windows + PowerShell lab notes, guides, and checklists.
+site_url: https://sammy-john.github.io/windows11-powershell-lab/   # 🔧
+repo_url: https://github.com/Sammy-John/windows11-powershell-lab   # 🔧
+repo_name: Sammy-John/windows11-powershell-lab                # 🔧
 edit_uri: edit/main/docs/
 
 theme:
   name: material
-  logo: images/studio-teknabu-logo.webp
-  favicon: images/studio-teknabu-logo.webp
+  language: en
+  logo: assets/studio-teknabu-logo.webp         # 🔧 provide a simple monochrome logo
+  favicon: assets/studio-teknabu-logo.webp    # 🔧
+  features:
+    - navigation.tabs
+    - navigation.top
+    - navigation.instant
+    - navigation.indexes
+    - search.suggest
+    - search.highlight
+    - toc.follow
+    - content.code.copy
+    - content.tabs.link
+    - content.action.edit
   palette:
     - scheme: default
+      primary: blue                 # 🔧 brand color
+      accent: cyan                  # 🔧 accent
+    - scheme: slate
+      primary: blue                 # 🔧
+      accent: cyan                  # 🔧
       toggle:
         icon: material/weather-night
         name: Switch to dark mode
-    - scheme: slate
-      toggle:
-        icon: material/weather-sunny
-        name: Switch to light mode
-  features:
-    - navigation.instant
-    - navigation.top
-    - toc.integrate
-    - content.code.copy
+  font:
+    text: Inter                     # 🔧 or system UI
+    code: JetBrains Mono            # 🔧
 
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/Sammy-John/windows11-powershell-lab       # 🔧
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/sammyjohnrawlinson/ # 🔧
+  generator: false
+
+plugins:
+  - search
+  - minify:
+      minify_html: true
+  - git-revision-date-localized:
+      enable_creation_date: true
+  - glightbox
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+      linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.snippets
+  - toc:
+      permalink: true
+      toc_depth: 3
+  - tables
+
+extra_css:
+  - assets/styles/extra.css
 
 nav:
   - Home: index.md
-
-docs_dir: docs
-
-extra_css:
-  - stylesheets/extra.css
-
+  - Changelog: changelog.md

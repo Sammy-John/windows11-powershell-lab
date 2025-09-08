@@ -2,3 +2,9 @@
 __pycache__/
 .DS_Store
 Thumbs.db
+
+# Copy of Changelog Locally
+/docs/changelog.md
+
+# Local Changelog Script
+serve.ps1
