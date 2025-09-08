@@ -1,27 +1,29 @@
-name: Build & Deploy MkDocs
+name: Build MkDocs into /docs
 
 on:
   push:
     branches: [ main ]
+    paths-ignore:
+      - 'docs/**'    # avoid loop when we commit built files
   workflow_dispatch:
 
 permissions:
   contents: write
 
 jobs:
-  build-deploy:
+  build-commit:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout (full history for git dates)
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - name: Ensure unshallow history (safety)
+      - name: Ensure unshallow (safety)
         run: |
           git fetch --prune --unshallow || true
-          git rev-parse --short HEAD
-          git log -1 --oneline
+          echo "is-shallow? $(git rev-parse --is-shallow-repository || echo unknown)"
+          git log -1 --oneline || true
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -37,34 +39,21 @@ jobs:
             mkdocs-git-revision-date-localized-plugin \
             mkdocs-glightbox
 
-      - name: Sync changelog into docs/
+      - name: Sync changelog into src/
         run: |
-          mkdir -p docs
+          mkdir -p src
           if [ -f "changelog.md" ]; then
-            cp -f changelog.md docs/changelog.md
-            echo "Copied changelog.md -> docs/changelog.md"
+            cp -f changelog.md src/changelog.md
+            echo "Copied changelog.md -> src/changelog.md"
           else
             echo "::warning::Root changelog.md not found; skipping copy"
           fi
 
-      # 🔎 DEBUG: confirm the files the runner is actually building
-      - name: Debug: show mkdocs.yml
-        run: |
-          echo "----- mkdocs.yml -----"
-          nl -ba mkdocs.yml
+      - name: Build MkDocs (strict, output to /docs)
+        run: mkdocs build --strict --clean
 
-      - name: Debug: show index.md
-        run: |
-          echo "----- docs/index.md -----"
-          nl -ba docs/index.md || (echo "docs/index.md missing"; exit 1)
-
-      - name: Build MkDocs (strict)
-        run: mkdocs build --strict
-
-      - name: Deploy to gh-pages
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Commit built site to main (docs/)
+        uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_branch: gh-pages
-          publish_dir: ./site
-          force_orphan: true
+          commit_message: "Build MkDocs site"
+          file_pattern: docs/**

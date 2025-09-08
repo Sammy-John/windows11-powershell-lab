@@ -1,42 +1,76 @@
-name: Deploy MkDocs
+name: Build & Deploy MkDocs
+
 on:
   push:
     branches: [ main ]
+  workflow_dispatch:
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: 'pages'
-  cancel-in-progress: true
+  contents: write
 
 jobs:
-  build:
+  build-deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Ensure full history & show shallow status
+        shell: bash
+        run: |
+          # Make absolutely sure this isn't shallow
+          git fetch --prune --unshallow || true
+          echo "is-shallow? -> $(git rev-parse --is-shallow-repository || echo unknown)"
+          echo "HEAD -> $(git rev-parse --short HEAD)"
+          echo "Last 3 commits:"
+          git log --oneline -3 || true
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: Install deps
+
+      - name: Install MkDocs + plugins
         run: |
           python -m pip install --upgrade pip
-          pip install mkdocs-material
-      - name: Build
-        run: mkdocs build --strict
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: site
+          pip install \
+            mkdocs-material \
+            mkdocs-minify-plugin \
+            mkdocs-git-revision-date-localized-plugin \
+            mkdocs-glightbox
 
-  deploy:
-    needs: build
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    steps:
-      - id: deployment
-        uses: actions/deploy-pages@v4
+      - name: Sync changelog into docs/
+        run: |
+          mkdir -p docs
+          if [ -f "changelog.md" ]; then
+            cp -f changelog.md docs/changelog.md
+            echo "Copied changelog.md -> docs/changelog.md"
+          else
+            echo "::warning::Root changelog.md not found; skipping copy"
+          fi
+
+      # 🔎 DEBUG: show the exact files the runner will build
+      - name: Debug: show mkdocs.yml
+        run: |
+          echo "----- mkdocs.yml -----"
+          nl -ba mkdocs.yml
+
+      - name: Debug: show docs/index.md
+        run: |
+          echo "----- docs/index.md -----"
+          nl -ba docs/index.md || (echo "docs/index.md missing"; exit 1)
+
+      - name: Build MkDocs (strict)
+        run: mkdocs build --strict
+
+      - name: Deploy to gh-pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: ./site
+          force_orphan: true
+
