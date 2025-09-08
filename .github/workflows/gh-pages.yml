@@ -1,0 +1,46 @@
+name: Build & Deploy MkDocs
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: write   # required for deploying to gh-pages
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install MkDocs + theme
+        run: |
+          pip install --upgrade pip
+          pip install mkdocs mkdocs-material
+
+      - name: Prepare docs (copy root CHANGELOG → docs/changelog.md if present)
+        run: |
+          mkdir -p docs
+          if [ -f "CHANGELOG.md" ]; then
+            cp CHANGELOG.md docs/changelog.md
+          elif [ -f "changelog.md" ]; then
+            cp changelog.md docs/changelog.md
+          fi
+
+      - name: Build site
+        run: mkdocs build --strict
+
+      - name: Deploy to gh-pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: ./site
