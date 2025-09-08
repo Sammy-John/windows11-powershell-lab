@@ -1,52 +1,12 @@
 site_name: Windows11 + Powershell Lab
-site_description: Hands-on Windows + PowerShell lab notes, guides, and checklists.
 site_url: https://sammy-john.github.io/windows11-powershell-lab/
 repo_url: https://github.com/Sammy-John/windows11-powershell-lab
 repo_name: Sammy-John/windows11-powershell-lab
-edit_uri: edit/main/src/
+edit_uri: edit/main/docs/
 
-# 👇 important: source and output
-docs_dir: src     # your markdown source
-site_dir: docs    # build output (what Pages serves)
-
-
-theme:
-  name: material
-  language: en
-  logo: assets/studio-teknabu-logo.webp
-  favicon: assets/studio-teknabu-logo.webp
-  features:
-    - navigation.tabs
-    - navigation.top
-    - navigation.instant
-    - navigation.indexes
-    - search.suggest
-    - search.highlight
-    - toc.follow
-    - content.code.copy
-    - content.tabs.link
-    - content.action.edit
-  palette:
-    - scheme: default
-      primary: blue
-      accent: cyan
-    - scheme: slate
-      primary: blue
-      accent: cyan
-      toggle:
-        icon: material/weather-night
-        name: Switch to dark mode
-  font:
-    text: Inter
-    code: JetBrains Mono
-
-extra:
-  social:
-    - icon: fontawesome/brands/github
-      link: https://github.com/Sammy-John/windows11-powershell-lab
-    - icon: fontawesome/brands/linkedin
-      link: https://www.linkedin.com/in/sammyjohnrawlinson/
-  generator: false
+# default dirs (explicit for clarity)
+docs_dir: docs
+site_dir: site
 
 plugins:
   - search
@@ -55,28 +15,7 @@ plugins:
   - git-revision-date-localized:
       enable_creation_date: true
       exclude:
-        - changelog.md      # relative to docs_dir (src)
+        - changelog.md   # we copy this into docs/ during build
   - glightbox
 
-markdown_extensions:
-  - admonition
-  - pymdownx.details
-  - pymdownx.superfences
-  - pymdownx.highlight:
-      anchor_linenums: true
-      linenums: true
-  - pymdownx.inlinehilite
-  - pymdownx.tabbed:
-      alternate_style: true
-  - pymdownx.snippets
-  - toc:
-      permalink: true
-      toc_depth: 3
-  - tables
-
-extra_css:
-  - assets/styles/extra.css
-
-nav:
-  - Home: index.md
-  - Changelog: changelog.md
+# …(theme, extensions, extra) keep as you had them…
