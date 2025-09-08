@@ -26,6 +26,9 @@ jobs:
           pip install --upgrade pip
           pip install mkdocs mkdocs-material
 
+      - name: Ensure overrides directory exists
+        run: mkdir -p overrides
+
       - name: Prepare docs (copy root CHANGELOG → docs/changelog.md if present)
         run: |
           mkdir -p docs
