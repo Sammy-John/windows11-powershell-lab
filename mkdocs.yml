@@ -28,8 +28,8 @@ theme:
       toggle:
         icon: material/weather-sunny
         name: Switch to light mode
-  logo: assets/logo.svg               # optional (place in docs/assets/)
-  favicon: assets/favicon.png         # optional (place in docs/assets/)
+  logo: assets/studio-teknabu-logo.webp             # optional (place in docs/assets/)
+  favicon: assets/favicon-32x32.png         # optional (place in docs/assets/)
 
 nav:
   - Home: index.md
