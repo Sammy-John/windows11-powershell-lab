@@ -262,3 +262,107 @@ html, body {
 .brand-footer__tagline a:hover {
   text-decoration-thickness: 2px;
 }
+
+/* === Branded hero === */
+.hero {
+  /* background: subtle gradient using brand tokens */
+  background:
+    radial-gradient(80rem 24rem at 50% -10%, var(--color-accent-glow-soft), transparent 60%),
+    linear-gradient(180deg, color-mix(in srgb, var(--color-accent-soft), white 55%), transparent 30%),
+    var(--color-bg);
+  border-bottom: 1px solid color-mix(in srgb, var(--color-accent-secondary) 18%, transparent);
+}
+
+[data-md-color-scheme="slate"] .hero {
+  background:
+    radial-gradient(80rem 24rem at 50% -10%, color-mix(in srgb, var(--color-accent) 20%, transparent), transparent 60%),
+    linear-gradient(180deg, #0b1220, transparent 35%),
+    var(--color-surface-dark);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.hero__inner {
+  max-width: var(--max-content-width);
+  margin: 0 auto;
+  padding: 4.5rem 1.25rem 3rem;
+  text-align: center;
+}
+
+.hero__badge {
+  display: inline-block;
+  font-family: var(--font-header);
+  font-size: var(--font-size-sm);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  background: color-mix(in srgb, var(--color-accent-soft), white 25%);
+  border: 1px solid color-mix(in srgb, var(--color-accent-secondary) 30%, transparent);
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  margin-bottom: 0.75rem;
+  color: var(--color-accent-deep);
+}
+
+[data-md-color-scheme="slate"] .hero__badge {
+  background: color-mix(in srgb, var(--color-accent) 22%, transparent);
+  border-color: color-mix(in srgb, var(--color-accent-soft) 40%, transparent);
+  color: var(--color-text-light);
+}
+
+.hero__title {
+  font-family: var(--font-header);
+  font-size: clamp(2rem, 4vw + 1rem, 3.25rem);
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--letter-spacing-tight);
+  margin: 0.25rem 0 0.5rem;
+}
+
+.hero__subtitle {
+  max-width: 54rem;
+  margin: 0 auto 1.25rem;
+  font-size: clamp(1rem, 0.6vw + 0.95rem, 1.125rem);
+  opacity: 0.95;
+}
+
+/* CTA buttons */
+.btn {
+  display: inline-block;
+  padding: 0.65rem 1rem;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  border: 1px solid transparent;
+  transition: transform .15s ease, box-shadow .15s ease, background-color .15s ease, color .15s ease;
+  margin: 0.25rem 0.375rem;
+}
+
+.btn--primary {
+  background: var(--color-accent);
+  color: #ffffff;
+  box-shadow: 0 6px 18px -8px var(--color-accent-glow);
+}
+.btn--primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 22px -10px var(--color-accent-glow);
+}
+
+.btn--ghost {
+  background: transparent;
+  color: var(--color-accent-deep);
+  border-color: color-mix(in srgb, var(--color-accent-deep) 45%, transparent);
+}
+.btn--ghost:hover {
+  background: color-mix(in srgb, var(--color-accent-soft), white 70%);
+}
+
+[data-md-color-scheme="slate"] .btn--ghost {
+  color: var(--color-accent-soft);
+  border-color: color-mix(in srgb, var(--color-accent-soft) 55%, transparent);
+}
+[data-md-color-scheme="slate"] .btn--ghost:hover {
+  background: color-mix(in srgb, var(--color-accent-deep-alt) 55%, transparent);
+}
+
+/* Tighter spacing on small screens */
+@media (max-width: 640px) {
+  .hero__inner { padding: 3.5rem 1rem 2.25rem; }
+}
