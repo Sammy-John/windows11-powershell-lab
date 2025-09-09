@@ -1,38 +1,36 @@
 <!-- Branded hero -->
 <div class="hero">
   <div class="hero__inner">
-    <div class="hero__badge">Studio Teknabu</div>
-    <h1 class="hero__title">Windows Lab Knowledge Base</h1>
+    <div class="hero__logo">
+      <img src="assets/studio-teknabu-logo.webp" alt="Studio Teknabu Logo">
+    </div>
+
+    <h1 class="hero__title">Windows11 + Powershell Lab</h1>
     <p class="hero__subtitle">
-      A living reference for mastering <strong>Windows OS</strong> and <strong>PowerShell</strong>—built from hands-on
-      experiments in a VM and evolving notes from daily practice.
+      A living reference for mastering <strong>Windows OS</strong> and <strong>PowerShell</strong> —
+      built from hands-on experiments in a virtual machine and evolving notes from daily practice.
     </p>
+
+    <!-- Snapshot of purpose (HTML list to render inside hero) -->
+    <ul style="list-style:none; padding:0; margin:0 0 1.25rem; line-height:1.6;">
+      <li>🗂️ <strong>Single source of truth</strong> for my Windows + PowerShell knowledge</li>
+      <li>⚙️ <strong>Repeatable steps</strong> for installs, config, and troubleshooting</li>
+      <li>📈 <strong>Progressive learning path</strong> from fundamentals to real workflows</li>
+      <li>📜 <strong>Changelog</strong> tracks every VM snapshot &amp; change (<a href="changelog.md">view</a>)</li>
+    </ul>
+
     <div class="hero__cta">
-      <a class="btn btn--primary" href="changelog.md">View Changelog</a>
-      <a class="btn btn--ghost" href="#what-youll-find">Explore Sections</a>
+      <a class="cta-button" href="changelog.md">
+        <span class="icon">📜</span> View Changelog
+      </a>
+      <a class="cta-button cta-button--ghost" href="#what-youll-find">
+        <span class="icon">🧭</span> Explore Sections
+      </a>
     </div>
   </div>
 </div>
 
-
-
-# 🖥️ Windows Lab Knowledge Base
-
-Welcome! This site is my **personal reference hub** for mastering **Windows OS** and **PowerShell**.  
-It grows from hands-on experiments in a virtual machine and evolving notes from daily practice.  
-
 > 💡 The **[Changelog](changelog.md)** is a step-by-step record of my VM lab builds, snapshots, and configuration changes. It’s the running diary of this entire journey.
-
----
-
-## 🎯 Purpose
-
-- 🗂️ Create a **single source of truth** for my Windows and PowerShell knowledge.  
-- ⚙️ Capture **repeatable steps** for installs, configuration, and troubleshooting.  
-- 📈 Build a **progressive learning path** from fundamentals to real-world workflows.  
-- 🕒 Keep a **transparent history** of my lab via the Changelog to track decisions and results.  
-
----
 
 ## 📖 What You’ll Find
 
@@ -46,20 +44,3 @@ It grows from hands-on experiments in a virtual machine and evolving notes from 
     Each section is designed to grow over time — start small, then expand as the lab evolves.  
 
 ---
-
-## 🚀 How to Use This Site
-
-1. 🔧 Open **Guides** for practical actions you want to perform right now.  
-2. 📝 Explore **Notes** to deepen understanding of Windows features.  
-3. 💻 Use **PowerShell** and **Cheatsheet** sections when scripting.  
-4. 📜 Check the **Changelog** whenever you want the exact sequence of lab changes and snapshots.  
-
----
-
-## 📂 Obsidian Vault Integration *(Coming Soon)*
-
-This site will eventually mirror sections from my **Obsidian vault**:
-
-- ✍️ Author and update notes in Obsidian (my daily tool).  
-- 🔄 Sync/export them into MkDocs automatically.  
-- 🧭 Keep structure consistent so new notes “just appear” in the right section.  
