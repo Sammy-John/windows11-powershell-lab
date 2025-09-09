@@ -1,0 +1,264 @@
+/* ──────────────────────────────────────────────
+   1) Brand design tokens
+   ────────────────────────────────────────────── */
+:root {
+  --font-header: 'Outfit', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-accent: 'Space Grotesk', sans-serif;
+  --font-alt-body: 'IBM Plex Sans', sans-serif;
+
+  --color-bg: #E9F5FF; 
+  --color-bg-alt-1: #F5F7FA;
+  --color-bg-alt-2: #F2F4F2;
+  --color-bg-alt-3: #F8FAFC;
+
+  --color-bg-dark: #092F64;
+  --color-surface-dark: #1F1F1F;
+
+  --color-text: #1A1A1A;
+  --color-text-light: #f4f4f6;
+
+  --color-accent: #5A4DFF;
+  --color-accent-glow: rgba(90, 77, 255, 0.4);
+  --color-accent-glow-soft: rgba(109, 74, 255, 0.3);
+  --color-accent-secondary: #468BE5;
+  --color-accent-secondary-desaturated: #6DA9E3;
+  --color-accent-soft: #93BFEF;
+  --color-accent-soft-muted: #B2D4F0;
+  --color-accent-deep: #1A5799;
+  --color-accent-deep-alt: #274472;
+
+  --max-content-width: 1440px;
+
+  --font-size-sm: 0.875rem;
+  --font-size-md: 1rem;
+  --font-size-lg: 1.25rem;
+  --font-size-xl: 1.5rem;
+  --font-size-2xl: 2rem;
+  --font-size-3xl: 3rem;
+
+  --line-height-base: 1.6;
+  --line-height-heading: 1.25;
+  --line-height-tight: 1.15;
+
+  --letter-spacing-tight: -0.02em;
+  --letter-spacing-normal: 0em;
+  --letter-spacing-wide: 0.05em;
+}
+
+/* ──────────────────────────────────────────────
+   2) Map brand tokens → Material variables
+   ────────────────────────────────────────────── */
+
+/* Light scheme */
+:root,
+[data-md-color-scheme="default"] {
+  --md-text-font: var(--font-body);
+  --md-code-font: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+
+  --md-default-bg-color: var(--color-bg);
+  --md-default-fg-color: var(--color-text);
+  --md-primary-fg-color: var(--color-accent);
+  --md-accent-fg-color: var(--color-accent-secondary);
+
+  --md-surface: #ffffff;
+  --md-code-bg-color: #f6f8fa;
+  --md-footer-bg-color: var(--color-bg-alt-1);
+  --md-footer-fg-color: var(--color-text);
+
+  --md-typeset-a-color: var(--color-accent-deep);
+}
+
+/* Dark scheme */
+[data-md-color-scheme="slate"] {
+  --md-default-bg-color: var(--color-surface-dark);
+  --md-default-fg-color: var(--color-text-light);
+  --md-primary-fg-color: var(--color-accent);
+  --md-accent-fg-color: var(--color-accent-secondary);
+
+  --md-surface: #121212;
+  --md-code-bg-color: #0f172a;
+  --md-footer-bg-color: #0b1220;
+  --md-footer-fg-color: var(--color-text-light);
+
+  --md-typeset-a-color: var(--color-accent-soft);
+}
+
+/* ──────────────────────────────────────────────
+   3) Global typography & layout
+   ────────────────────────────────────────────── */
+html, body {
+  font-family: var(--font-body);
+  font-size: var(--font-size-md);
+  line-height: var(--line-height-base);
+  letter-spacing: var(--letter-spacing-normal);
+}
+
+.md-typeset h1, .md-typeset h2, .md-typeset h3,
+.md-typeset h4, .md-typeset h5, .md-typeset h6 {
+  font-family: var(--font-header);
+  line-height: var(--line-height-heading);
+  letter-spacing: var(--letter-spacing-tight);
+}
+
+.md-typeset h1 { font-size: var(--font-size-3xl); }
+.md-typeset h2 { font-size: var(--font-size-2xl); }
+.md-typeset h3 { font-size: var(--font-size-xl); }
+.md-typeset h4 { font-size: var(--font-size-lg); }
+
+.md-typeset p, .md-typeset li {
+  font-size: var(--font-size-md);
+}
+
+.md-grid {
+  max-width: var(--max-content-width);
+}
+
+/* ──────────────────────────────────────────────
+   4) Header fixes (contrast + sizing)
+   ────────────────────────────────────────────── */
+:root,
+[data-md-color-scheme="default"] {
+  --header-bg: var(--color-accent-deep);
+  --header-fg: #ffffff;
+}
+
+[data-md-color-scheme="slate"] {
+  --header-bg: #0e1e3a;
+  --header-fg: var(--color-text-light);
+}
+
+.md-header {
+  background: var(--header-bg) !important;
+  border-bottom: none;
+  min-height: 64px;
+}
+
+.md-header, .md-header a, .md-header .md-icon,
+.md-header .md-search__input,
+.md-header .md-search__icon {
+  color: var(--header-fg) !important;
+  fill: var(--header-fg) !important;
+}
+
+/* Logo sizing */
+.md-logo img {
+  height: 36px;
+  width: auto;
+  display: block;
+}
+
+/* ──────────────────────────────────────────────
+   5) Search input fixes
+   ────────────────────────────────────────────── */
+[data-md-color-scheme="default"] .md-search__form {
+  background: #ffffff !important;
+  border: 1px solid var(--color-accent-soft-muted);
+}
+[data-md-color-scheme="default"] .md-search__input {
+  color: #1A1A1A !important;
+  caret-color: var(--color-accent);
+}
+[data-md-color-scheme="default"] .md-search__input::placeholder {
+  color: rgba(26,26,26,0.55) !important;
+}
+[data-md-color-scheme="default"] .md-search__icon {
+  color: #1A1A1A !important;
+  fill: #1A1A1A !important;
+}
+
+/* Dark mode search */
+[data-md-color-scheme="slate"] .md-search__form {
+  background: #1f2937 !important;
+  border: 1px solid var(--color-accent-deep-alt);
+}
+[data-md-color-scheme="slate"] .md-search__input {
+  color: #f4f4f6 !important;
+}
+[data-md-color-scheme="slate"] .md-search__input::placeholder {
+  color: rgba(244,244,246,0.6) !important;
+}
+[data-md-color-scheme="slate"] .md-search__icon {
+  color: #f4f4f6 !important;
+  fill: #f4f4f6 !important;
+}
+
+/* === Footer redesign === */
+.brand-footer {
+  background: #0e1e3a;
+  color: #f4f4f6;
+  padding: 2rem 1rem;
+  font-size: var(--font-size-sm);
+}
+
+.brand-footer__inner {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 2rem;
+  max-width: var(--max-content-width);
+  margin: 0 auto;
+}
+
+.brand-footer__tagline p {
+  margin: 0;
+  font-size: var(--font-size-md);
+  line-height: var(--line-height-base);
+}
+
+.brand-footer__logo img {
+  height: 120px;
+  width: auto;
+  display: block;
+}
+
+.brand-footer__links h4 {
+  margin: 0 0 0.5rem;
+  font-family: var(--font-header);
+  font-size: var(--font-size-md);
+  text-align: right;
+}
+
+.brand-footer__links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: right;
+}
+
+.brand-footer__links li {
+  margin-bottom: 0.25rem;
+}
+
+.brand-footer__links a {
+  color: var(--color-accent-soft);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.brand-footer__links a:hover {
+  color: var(--color-accent);
+  text-decoration: underline;
+}
+
+.brand-footer__bottom {
+  border-top: 1px solid rgba(255,255,255,0.15);
+  margin-top: 1.5rem;
+  padding-top: 0.75rem;
+  text-align: center;
+  font-size: var(--font-size-sm);
+  opacity: 0.85;
+}
+
+/* Emphasize brand link in footer text */
+.brand-footer__tagline a {
+  color: var(--color-accent) !important;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  font-weight: 600;
+}
+.brand-footer__tagline a:hover {
+  text-decoration-thickness: 2px;
+}
