@@ -15,6 +15,24 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      
+      - name: Checkout Obsidian vault (subset)
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ secrets.VAULT_REPO }}      # e.g. you/obsidian-vault
+          token: ${{ secrets.VAULT_TOKEN }}
+          path: vault
+          fetch-depth: 1
+          sparse-checkout: |
+            Windows11+Powershell
+      
+      - name: Sync vault subset → docs/
+        run: |
+          sudo apt-get update -y
+          sudo apt-get install -y rsync
+          mkdir -p docs
+          rsync -av --delete \
+            vault/Windows11+Powershell/ docs/
 
       - name: Set up Python
         uses: actions/setup-python@v5
