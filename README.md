@@ -3,6 +3,8 @@
 This repository is a **reference hub** for building, securing, and managing a Windows environment.  
 It combines **practical setup notes, security principles, and PowerShell learning resources** into one organized space, published as a live site using MkDocs.
 
+[Live Preview]("https://sammy-john.github.io/windows11-powershell-lab/")
+
 ---
 
 ## 🌐 Purpose
