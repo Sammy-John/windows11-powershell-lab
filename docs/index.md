@@ -31,11 +31,20 @@
 
 ## 📖 What You’ll Find
 
-- **Guides** – Step-by-step instructions for installs, tools, features, and security tasks.  
-- **Notes** – Focused learning notes for Windows 11 features (e.g., Task Scheduler, Services, Event Viewer).  
-- **PowerShell** – Hands-on learning notes covering core concepts and administration tasks.  
-- **Scripts** – Example general scripts you can adapt for your own systems.  
-- **Cheatsheet** – Quick PowerShell syntax and examples to speed up writing scripts.  
+- **Guides** (`/guides/`)  
+  Step-by-step instructions for installs, tools, features, and security tasks.  
+
+- **Notes** (`/notes/`)  
+  Focused learning notes for Windows 11 features (e.g., Task Scheduler, Services, Event Viewer).  
+
+- **PowerShell** (`/powershell/`)  
+  Hands-on learning notes covering core concepts, commands, and administration tasks.  
+
+- **Scripts** (`/scripts/`)  
+  Example scripts you can adapt and run in your own environments.  
+
+- **Cheatsheet** (`/cheatsheet/`)  
+  Quick PowerShell syntax and examples for faster script writing.  
 
 !!! tip
     Each section is designed to grow over time — start small, then expand as the lab evolves.  
