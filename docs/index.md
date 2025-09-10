@@ -4,13 +4,11 @@
     <div class="hero__logo">
       <img src="assets/studio-teknabu-logo.webp" alt="Studio Teknabu Logo">
     </div>
-
     <h1 class="hero__title">Windows11 + Powershell Lab</h1>
     <p class="hero__subtitle">
       A living reference for mastering <strong>Windows OS</strong> and <strong>PowerShell</strong> —
       built from hands-on experiments in a virtual machine and evolving notes from daily practice.
     </p>
-
     <!-- Snapshot of purpose (HTML list to render inside hero) -->
     <ul style="list-style:none; padding:0; margin:0 0 1.25rem; line-height:1.6;">
       <li>🗂️ <strong>Single source of truth</strong> for my Windows + PowerShell knowledge</li>
@@ -18,7 +16,6 @@
       <li>📈 <strong>Progressive learning path</strong> from fundamentals to real workflows</li>
       <li>📜 <strong>Changelog</strong> tracks every VM snapshot &amp; change (<a href="changelog.md">view</a>)</li>
     </ul>
-
     <div class="hero__cta">
       <a class="cta-button" href="changelog.md">
         <span class="icon">📜</span> View Changelog
