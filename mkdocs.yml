@@ -39,7 +39,7 @@ theme:
   - search
   - gen-files               # NEW: enables virtual file creation
   - simple-hooks:           # NEW: runs our generator before build
-      on_pre_build:
+      on_files:
         - buildtools.gen_section_indexes:build_all_indexes
   - awesome-pages           # KEEP: your auto-nav behavior
   - roamlinks               # KEEP
