@@ -40,7 +40,7 @@ theme:
   - gen-files               # NEW: enables virtual file creation
   - simple-hooks:           # NEW: runs our generator before build
       on_pre_build:
-        - buildtools.gen_guides_virtual:build_guides_virtual
+        - buildtools.gen_section_indexes:build_all_indexes
   - awesome-pages           # KEEP: your auto-nav behavior
   - roamlinks               # KEEP
 
