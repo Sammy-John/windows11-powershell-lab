@@ -1,5 +1,3 @@
-# mkdocs.yml — minimal, auto-nav, Material
-
 site_name: "Windows 11 + PowerShell Lab"
 site_description: >-
   This repository is a reference hub for building, securing, and managing a
@@ -34,15 +32,14 @@ theme:
   logo: assets/studio-teknabu-logo.webp
   favicon: assets/favicon-32x32.png
 
-
-  plugins:
+plugins:                # ← OUTDENTED to root (very important)
   - search
-  - gen-files               # NEW: enables virtual file creation
-  - simple-hooks:           # NEW: runs our generator before build
+  - gen-files
+  - simple-hooks:
       on_files:
         - buildtools.gen_section_indexes:build_all_indexes
-  - awesome-pages           # KEEP: your auto-nav behavior
-  - roamlinks               # KEEP
+  - awesome-pages
+  - roamlinks
 
 markdown_extensions:
   - admonition
@@ -63,7 +60,3 @@ extra:
   social:
     - icon: fontawesome/brands/github
       link: "https://github.com/Sammy-John/windows11-powershell-lab"
-
-# Optional:
-# repo_url: https://github.com/your-account/your-repo
-# repo_name: your-repo

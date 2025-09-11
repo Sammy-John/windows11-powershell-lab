@@ -15,7 +15,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      
+
       - name: Checkout Obsidian vault (subset)
         uses: actions/checkout@v4
         with:
@@ -25,7 +25,7 @@ jobs:
           fetch-depth: 1
           sparse-checkout: |
             Windows11+Powershell
-      
+
       - name: Sync vault subset → docs/
         run: |
           sudo apt-get update -y
@@ -37,18 +37,15 @@ jobs:
             --exclude '/assets/' \
             "vault/Windows11+Powershell/" "docs/"
 
-
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.x'
 
-      - name: Install MkDocs + theme
+      - name: Install dependencies
         run: |
-          pip install --upgrade pip
-          pip install mkdocs mkdocs-material mkdocs-awesome-pages-plugin mkdocs-roamlinks-plugin
-          pip install mkdocs-section-index
-
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
 
       - name: Ensure overrides directory exists
         run: mkdir -p overrides
@@ -62,8 +59,13 @@ jobs:
             cp changelog.md docs/changelog.md
           fi
 
+      # Optional but helpful: ensure section folders exist so virtual indexes have a place
+      - name: Ensure section folders exist
+        run: |
+          mkdir -p docs/guides docs/notes docs/powershell docs/scripts docs/cheatsheet
+
       - name: Build site
-        run: mkdocs build # temp removed for missing links--strict
+        run: mkdocs build  # add --strict after fixing missing links
 
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v3
