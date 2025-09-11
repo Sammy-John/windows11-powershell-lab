@@ -32,14 +32,14 @@ theme:
   logo: assets/studio-teknabu-logo.webp
   favicon: assets/favicon-32x32.png
 
-plugins:                # ← OUTDENTED to root (very important)
+plugins:
   - search
-  - gen-files
-  - simple-hooks:
-      on_files:
-        - buildtools.gen_section_indexes:build_all_indexes
+  - gen-files:
+      scripts:
+        - buildtools/gen_section_indexes.py
   - awesome-pages
   - roamlinks
+
 
 markdown_extensions:
   - admonition

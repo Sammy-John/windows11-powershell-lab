@@ -79,11 +79,16 @@ def _render_index_md(title: str, intro: str, items: list[tuple[str, str]]) -> st
     out.append("")  # trailing newline
     return "\n".join(out)
 
+# ... all your functions above ...
+
 def build_all_indexes(**_kwargs):
     for folder, (human_title, intro) in SECTIONS.items():
         section_dir = DOCS_DIR / folder
         items = _gather_items(section_dir)
         content = _render_index_md(human_title, intro, items)
-        # Create a virtual file at "<folder>/index.md"
         with mkdocs_gen_files.open(f"{folder}/index.md", "w") as f:
             f.write(content)
+
+# IMPORTANT: run it when mkdocs executes this script
+build_all_indexes()
+
