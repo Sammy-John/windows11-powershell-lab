@@ -11,25 +11,25 @@
       
       
       
-        <link rel="prev" href="../">
+        <link rel="prev" href="../guides/Installing%20Windows%2011%20on%20VirtualBox/">
       
       
-        <link rel="next" href="../Installing%20Git%20on%20Windows%2011/">
+        <link rel="next" href="../powershell/">
       
       
-      <link rel="icon" href="../../assets/favicon-32x32.png">
+      <link rel="icon" href="../assets/favicon-32x32.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.19">
     
     
       
-        <title>Installing 7-Zip on Windows 11 - Windows 11 + PowerShell Lab</title>
+        <title>📒 Notes - Windows 11 + PowerShell Lab</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.7e37652d.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.7e37652d.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -48,9 +48,9 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/theme.css">
+      <link rel="stylesheet" href="../assets/theme.css">
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -82,7 +82,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#installing-7-zip-on-windows-11" class="md-skip">
+        <a href="#notes" class="md-skip">
           Skip to content
         </a>
       
@@ -98,9 +98,9 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Windows 11 + PowerShell Lab" class="md-header__button md-logo" aria-label="Windows 11 + PowerShell Lab" data-md-component="logo">
+    <a href=".." title="Windows 11 + PowerShell Lab" class="md-header__button md-logo" aria-label="Windows 11 + PowerShell Lab" data-md-component="logo">
       
-  <img src="../../assets/studio-teknabu-logo.webp" alt="logo">
+  <img src="../assets/studio-teknabu-logo.webp" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -117,7 +117,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Installing 7-Zip on Windows 11
+              📒 Notes
             
           </span>
         </div>
@@ -223,9 +223,9 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Windows 11 + PowerShell Lab" class="md-nav__button md-logo" aria-label="Windows 11 + PowerShell Lab" data-md-component="logo">
+    <a href=".." title="Windows 11 + PowerShell Lab" class="md-nav__button md-logo" aria-label="Windows 11 + PowerShell Lab" data-md-component="logo">
       
-  <img src="../../assets/studio-teknabu-logo.webp" alt="logo">
+  <img src="../assets/studio-teknabu-logo.webp" alt="logo">
 
     </a>
     Windows 11 + PowerShell Lab
@@ -240,7 +240,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href=".." class="md-nav__link">
         
   
   
@@ -262,7 +262,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../changelog/" class="md-nav__link">
+      <a href="../changelog/" class="md-nav__link">
         
   
   
@@ -302,7 +302,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../cheatsheet/" class="md-nav__link ">
+            <a href="../cheatsheet/" class="md-nav__link ">
               
   
   
@@ -336,8 +336,6 @@
       
   
   
-    
-  
   
   
     
@@ -363,15 +361,15 @@
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../" class="md-nav__link ">
+            <a href="../guides/" class="md-nav__link ">
               
   
   
@@ -390,7 +388,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             Guides
@@ -403,32 +401,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Installing 7-Zip on Windows 11
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../guides/Installing%207Zip%20on%20Windows11/" class="md-nav__link">
         
   
   
@@ -439,122 +415,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
-    <span class="md-ellipsis">
-      Overview
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#prerequisites" class="md-nav__link">
-    <span class="md-ellipsis">
-      Prerequisites
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#steps" class="md-nav__link">
-    <span class="md-ellipsis">
-      Steps
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Steps">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-download-7-zip" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. Download 7-Zip
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-install-7-zip" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. Install 7-Zip
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-enable-context-menu-integration" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. Enable Context Menu Integration
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-verify-installation" class="md-nav__link">
-    <span class="md-ellipsis">
-      4. Verify Installation
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#verification" class="md-nav__link">
-    <span class="md-ellipsis">
-      Verification
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#troubleshooting" class="md-nav__link">
-    <span class="md-ellipsis">
-      Troubleshooting
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#references" class="md-nav__link">
-    <span class="md-ellipsis">
-      References
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -567,7 +427,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Installing%20Git%20on%20Windows%2011/" class="md-nav__link">
+      <a href="../guides/Installing%20Git%20on%20Windows%2011/" class="md-nav__link">
         
   
   
@@ -590,7 +450,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Installing%20Notepad%20%2B%2B%20on%20Windows11/" class="md-nav__link">
+      <a href="../guides/Installing%20Notepad%20%2B%2B%20on%20Windows11/" class="md-nav__link">
         
   
   
@@ -613,7 +473,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Installing%20PowerShell%207%20on%20Windows11/" class="md-nav__link">
+      <a href="../guides/Installing%20PowerShell%207%20on%20Windows11/" class="md-nav__link">
         
   
   
@@ -636,7 +496,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Installing%20SysInternals%20on%20Windows%2011/" class="md-nav__link">
+      <a href="../guides/Installing%20SysInternals%20on%20Windows%2011/" class="md-nav__link">
         
   
   
@@ -659,7 +519,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Installing%20Windows%2011%20on%20VirtualBox/" class="md-nav__link">
+      <a href="../guides/Installing%20Windows%2011%20on%20VirtualBox/" class="md-nav__link">
         
   
   
@@ -686,6 +546,8 @@
       
   
   
+    
+  
   
   
     
@@ -699,15 +561,15 @@
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../notes/" class="md-nav__link ">
+            <a href="./" class="md-nav__link md-nav__link--active">
               
   
   
@@ -721,7 +583,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             Notes
@@ -762,7 +624,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../powershell/" class="md-nav__link ">
+            <a href="../powershell/" class="md-nav__link ">
               
   
   
@@ -817,7 +679,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../scripts/" class="md-nav__link ">
+            <a href="../scripts/" class="md-nav__link ">
               
   
   
@@ -874,96 +736,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
+  <a href="#contents" class="md-nav__link">
     <span class="md-ellipsis">
-      Overview
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#prerequisites" class="md-nav__link">
-    <span class="md-ellipsis">
-      Prerequisites
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#steps" class="md-nav__link">
-    <span class="md-ellipsis">
-      Steps
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Steps">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-download-7-zip" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. Download 7-Zip
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-install-7-zip" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. Install 7-Zip
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-enable-context-menu-integration" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. Enable Context Menu Integration
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-verify-installation" class="md-nav__link">
-    <span class="md-ellipsis">
-      4. Verify Installation
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#verification" class="md-nav__link">
-    <span class="md-ellipsis">
-      Verification
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#troubleshooting" class="md-nav__link">
-    <span class="md-ellipsis">
-      Troubleshooting
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#references" class="md-nav__link">
-    <span class="md-ellipsis">
-      References
+      Contents
     </span>
   </a>
   
@@ -981,110 +756,17 @@
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
-  <div class="page" data-page-type="Guide">
+  <div class="page" data-page-type="">
     
                   
 
 
 
-<h1 id="installing-7-zip-on-windows-11">Installing 7-Zip on Windows 11<a class="headerlink" href="#installing-7-zip-on-windows-11" title="Permanent link">&para;</a></h1>
-<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
-<p>This guide covers installing the latest <strong>7-Zip</strong> (64-bit), enabling File Explorer context menu integration, and verifying the installation.</p>
-<div class="admonition info">
-<p class="admonition-title">What you'll do</p>
+<h1 id="notes">📒 Notes<a class="headerlink" href="#notes" title="Permanent link">&para;</a></h1>
+<p>Focused learning notes for Windows 11 features and tools. </p>
+<h2 id="contents">Contents<a class="headerlink" href="#contents" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Download and install 7-Zip (x64).</li>
-<li>Enable Explorer context menu integration.</li>
-<li>Verify from GUI and CLI.</li>
-</ul>
-</div>
-<div class="admonition tip">
-<p class="admonition-title">Before you start</p>
-<p>Take a <strong>VM snapshot</strong> before installing new tools.</p>
-</div>
-<hr />
-<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Windows 11</li>
-<li>Internet access</li>
-<li>Local administrator privileges</li>
-</ul>
-<div class="admonition note">
-<p class="admonition-title">Helpful links</p>
-<ul>
-<li><a href="https://www.7-zip.org/">7-Zip Official Website</a></li>
-</ul>
-</div>
-<hr />
-<h2 id="steps">Steps<a class="headerlink" href="#steps" title="Permanent link">&para;</a></h2>
-<h3 id="1-download-7-zip">1. Download 7-Zip<a class="headerlink" href="#1-download-7-zip" title="Permanent link">&para;</a></h3>
-<ol>
-<li>Open a browser.</li>
-<li>Go to <a href="https://www.7-zip.org/">https://www.7-zip.org/</a>.</li>
-<li>Download the latest <strong>64-bit x64</strong> Windows installer (e.g., <code>7z2301-x64.exe</code>).</li>
-</ol>
-<h3 id="2-install-7-zip">2. Install 7-Zip<a class="headerlink" href="#2-install-7-zip" title="Permanent link">&para;</a></h3>
-<ol>
-<li>Run the downloaded <code>.exe</code>.</li>
-<li>Accept defaults (install path typically <code>C:\Program Files\7-Zip\</code>).</li>
-<li>Complete the wizard.</li>
-</ol>
-<div class="admonition warning">
-<p class="admonition-title">Caution</p>
-<p>Ensure you choose the <strong>x64</strong> build for Windows 11.</p>
-</div>
-<h3 id="3-enable-context-menu-integration">3. Enable Context Menu Integration<a class="headerlink" href="#3-enable-context-menu-integration" title="Permanent link">&para;</a></h3>
-<ol>
-<li>Open <strong>7-Zip File Manager</strong>.</li>
-<li>Navigate to <strong>Tools → Options → 7-Zip</strong>.</li>
-<li>Enable:</li>
-<li>✅ <strong>Integrate 7-Zip to shell context menu</strong></li>
-<li>✅ <em>(Optional)</em> <strong>Cascaded context menu</strong></li>
-<li>Click <strong>Apply</strong> → <strong>OK</strong>.</li>
-</ol>
-<h3 id="4-verify-installation">4. Verify Installation<a class="headerlink" href="#4-verify-installation" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Press <strong>Win + R</strong>, type <code>7z</code>, press <strong>Enter</strong> → 7-Zip File Manager opens.</li>
-<li>Right-click any file → confirm 7-Zip options appear.</li>
-<li>From PowerShell:</li>
-</ul>
-<div class="highlight"><pre><span></span><code><span class="p">&amp;</span> <span class="s2">&quot;C:\Program Files\7-Zip\7z.exe&quot;</span> <span class="p">-</span><span class="n">-help</span>
-</code></pre></div>
-<p>Expected: help output with available commands.</p>
-<hr />
-<h2 id="verification">Verification<a class="headerlink" href="#verification" title="Permanent link">&para;</a></h2>
-<ul>
-<li>7-Zip opens from Start Menu and command line.</li>
-<li>Context menu entries appear in File Explorer.</li>
-<li>Compression and extraction work without errors.</li>
-</ul>
-<div class="admonition success">
-<p class="admonition-title">It worked if…</p>
-<ul>
-<li><code>7z</code> launches</li>
-<li>Right-click menu shows 7-Zip options</li>
-<li><code>7z.exe --help</code> prints usage</li>
-</ul>
-</div>
-<hr />
-<h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
-<ul>
-<li><strong>No context menu options</strong> → Run 7-Zip File Manager as Administrator and re-enable integration.</li>
-<li><strong>Wrong architecture installed</strong> → Uninstall and reinstall the <strong>x64</strong> build.</li>
-<li><strong>Command not found</strong> → Add <code>C:\Program Files\7-Zip\</code> to <strong>PATH</strong> if you need CLI everywhere.</li>
-</ul>
-<div class="admonition failure">
-<p class="admonition-title">Common issues</p>
-<ul>
-<li>Context menu still missing → restart Explorer or sign out/in.</li>
-<li>Installer blocked by policy → unblock file / temporarily adjust policy.</li>
-</ul>
-</div>
-<hr />
-<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
-<ul>
-<li><a href="https://www.7-zip.org/">7-Zip Official Website</a></li>
-<li>Related: <code>[[PowerShell Basics]]</code></li>
+<li><em>Nothing here yet — add some <code>.md</code> files to this section.</em></li>
 </ul>
 
 
@@ -1092,9 +774,6 @@
 
 
 
-
-  
-  
 
 
 
@@ -1126,7 +805,7 @@
     <!-- Center: Logo -->
     <div class="brand-footer__logo">
       <a href="https://teknabu.com/" target="_blank" rel="noopener">
-        <img src="../../assets/studio-teknabu-logo.webp" alt="Studio Teknabu Logo">
+        <img src="../assets/studio-teknabu-logo.webp" alt="Studio Teknabu Logo">
       </a>
     </div>
 
@@ -1168,10 +847,10 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.indexes", "navigation.instant", "navigation.tracking", "navigation.path", "search.highlight", "search.suggest", "content.code.copy"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.indexes", "navigation.instant", "navigation.tracking", "navigation.path", "search.highlight", "search.suggest", "content.code.copy"], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.92b07e13.min.js"></script>
+      <script src="../assets/javascripts/bundle.92b07e13.min.js"></script>
       
     
   </body>
