@@ -26,13 +26,16 @@ jobs:
           sparse-checkout: |
             Windows11+Powershell
       
-      - name: Sync vault subset → docs/lab/
+      - name: Sync vault subset → docs/
         run: |
           sudo apt-get update -y
           sudo apt-get install -y rsync
-          mkdir -p docs/lab
+          mkdir -p docs
           rsync -av --delete \
-            "vault/Windows11+Powershell/" "docs/lab/"
+            --exclude '/index.md' \
+            --exclude '/changelog.md' \
+            --exclude '/assets/' \
+            "vault/Windows11+Powershell/" "docs/"
 
 
       - name: Set up Python
@@ -43,7 +46,8 @@ jobs:
       - name: Install MkDocs + theme
         run: |
           pip install --upgrade pip
-          pip install mkdocs mkdocs-material mkdocs-awesome-pages-plugin
+          pip install mkdocs mkdocs-material mkdocs-awesome-pages-plugin mkdocs-roamlinks-plugin
+          pip install mkdocs-section-index
 
 
       - name: Ensure overrides directory exists

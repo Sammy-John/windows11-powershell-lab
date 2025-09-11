@@ -13,6 +13,7 @@ theme:
   features:
     - navigation.instant
     - navigation.tracking
+    - navigation.path
     - search.highlight
     - search.suggest
     - content.code.copy
@@ -35,7 +36,9 @@ theme:
 plugins:
   - search
   - awesome-pages         # ← auto-generate nav from folder structure
-
+  - roamlinks
+  - section-index
+  
 markdown_extensions:
   - admonition
   - attr_list
