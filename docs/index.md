@@ -14,10 +14,10 @@
       <li>🗂️ <strong>Single source of truth</strong> for my Windows + PowerShell knowledge</li>
       <li>⚙️ <strong>Repeatable steps</strong> for installs, config, and troubleshooting</li>
       <li>📈 <strong>Progressive learning path</strong> from fundamentals to real workflows</li>
-      <li>📜 <strong>Changelog</strong> tracks every VM snapshot &amp; change (<a href="changelog.md">view</a>)</li>
+      <li>📜 <strong>Changelog</strong> tracks every VM snapshot &amp; change</li>
     </ul>
     <div class="hero__cta">
-      <a class="cta-button" href="changelog.md">
+      <a class="cta-button" href="changelog/">
         <span class="icon">📜</span> View Changelog
       </a>
       <a class="cta-button cta-button--ghost" href="#what-youll-find">
@@ -31,22 +31,22 @@
 
 ## 📖 What You’ll Find
 
-- **Guides** (`/guides/`)  
+- **[Guides](guides/)**  
   Step-by-step instructions for installs, tools, features, and security tasks.  
 
-- **Notes** (`/notes/`)  
+- **[Notes](notes/)**  
   Focused learning notes for Windows 11 features (e.g., Task Scheduler, Services, Event Viewer).  
 
-- **PowerShell** (`/powershell/`)  
+- **[PowerShell](powershell/)**  
   Hands-on learning notes covering core concepts, commands, and administration tasks.  
 
-- **Scripts** (`/scripts/`)  
+- **[Scripts](scripts/)**  
   Example scripts you can adapt and run in your own environments.  
 
-- **Cheatsheet** (`/cheatsheet/`)  
+- **[Cheatsheet](cheatsheet/)**  
   Quick PowerShell syntax and examples for faster script writing.  
 
 !!! tip
     Each section is designed to grow over time — start small, then expand as the lab evolves.  
-
+    
 ---

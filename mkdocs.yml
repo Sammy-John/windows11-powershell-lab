@@ -11,6 +11,7 @@ theme:
   name: material
   custom_dir: overrides
   features:
+    - navigation.indexes
     - navigation.instant
     - navigation.tracking
     - navigation.path
@@ -33,12 +34,16 @@ theme:
   logo: assets/studio-teknabu-logo.webp
   favicon: assets/favicon-32x32.png
 
-plugins:
+
+  plugins:
   - search
-  - awesome-pages         # ← auto-generate nav from folder structure
-  - roamlinks
-  - section-index
-  
+  - gen-files               # NEW: enables virtual file creation
+  - simple-hooks:           # NEW: runs our generator before build
+      on_pre_build:
+        - buildtools.gen_guides_virtual:build_guides_virtual
+  - awesome-pages           # KEEP: your auto-nav behavior
+  - roamlinks               # KEEP
+
 markdown_extensions:
   - admonition
   - attr_list

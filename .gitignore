@@ -1,13 +1,42 @@
+# --- Python / venv
 .venv/
+venv/
+env/
 __pycache__/
+*.py[cod]
+
+# --- MkDocs build & caches
+site/
+.cache/
+.mkdocs-*
+
+# --- Obsidian vault artifacts (if any end up under docs/)
+.obsidian/
+.obsidian-*/
+.trash/
+*.excalidraw
+
+# --- OS junk
 .DS_Store
 Thumbs.db
+desktop.ini
 
-# Copy of Changelog Locally
-/docs/changelog.md
+# --- Editor/IDE
+.vscode/
+.idea/
+*.code-workspace
 
-# Local Changelog Script
-serve.ps1
+# --- Logs & temp files
+*.log
+*.tmp
+*.bak
+*.swp
+*.swo
+*~
 
-# Ignore old folder if reappears
-/site/
+# --- Env files / local secrets
+.env
+.env.*
+
+# --- CI checkout of external vault (avoid accidental commits)
+vault/
