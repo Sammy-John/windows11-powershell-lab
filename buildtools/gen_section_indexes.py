@@ -61,10 +61,15 @@ def _gather_items(section_dir: Path):
         # Pretty URL: strip .md, add trailing slash; normalize for Windows
         url = str(rel.with_suffix("")).replace("\\", "/") + "/"
         title = extract_title(p)
-        items.append((title, url))
-    # Sort by title; change to reverse mtime if you prefer "latest first"
-    items.sort(key=lambda x: x[0].lower())
-    return items
+        mtime = p.stat().st_mtime  # filesystem modified time
+        items.append((title, url, mtime))
+
+    # Newest first by modified time
+    items.sort(key=lambda x: x[2], reverse=True)
+
+    # Return only (title, url) for rendering
+    return [(t, u) for t, u, _ in items]
+
 
 def _render_index_md(title: str, intro: str, items: list[tuple[str, str]]) -> str:
     out = []
